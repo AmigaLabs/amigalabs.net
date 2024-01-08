@@ -8,12 +8,13 @@ Having a new libc means that third-party libraries needs to be compiled and read
 
 ### Benefits
 The benefits of having such a repository:
+
 - The code can be used as documentation on how a library can be ported
-- We have a unified place to compile third-party libraries for the AmigaOS 4 available libcs
+- We have a unified place to compile third-party libraries for all the AmigaOS 4 available libcs
 - This repository can work as the single place of truth to find latest versions of libraries
 - The code is available for anyone to contribute
 - If someone would like to update a library, this can be done easily by adapting the Makefile or even the patch file
-- The code can be viewed by anyone, and help them understand how a library is possiblee to be ported and apply similar code for their projects
+- The code can be viewed by anyone, and help them understand how a library is possible to be ported, and apply similar code for their projects
 
 
 ### Files & Guidelines
@@ -32,5 +33,12 @@ In the repository, every library has its own folder, which contains the followin
 
         `diff -ruN <libname> <libname>-patched > patch.diff` 
     
-    * Make changes in the make file `init` job to apply that patch
+    * Make changes in the Makefile `init` job to apply that patch. Usually the following is needed
+        ```makefile
+        init: download patches
+
+        patches:
+            @echo "-> Apply the patches"
+            @patch -s -p0 < ./patch-1.diff
+        ```
 
