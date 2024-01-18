@@ -17,8 +17,10 @@ git clone https://github.com/AmigaLabs/binutils-gdb.git --branch nativeOS4-build
 mkdir -p binutils-gdb/native-build
 cd binutils-gdb/native-build
 
-CFLAGS="-mcrt=clib4 -DHAVE_POSIX_SIGNALS" CXXFLAGS="-mcrt=clib4 -DHAVE_POSIX_SIGNALS" ../configure --disable-plugins --disable-sim --host=ppc-amigaos --target=ppc-amigaos --prefix="$(realpath ../dist-clib4)"
+rm ../gas/doc/.dirstamp
+
+CFLAGS="-mcrt=clib4 -DHAVE_POSIX_SIGNALS" CXXFLAGS="-mcrt=clib4 -DHAVE_POSIX_SIGNALS" ../configure --disable-plugins --disable-sim --host=ppc-amigaos --target=ppc-amigaos --prefix="$(realpath ../dist-clib4)" --disable-gdb
 
 make -j$(shell nproc)
-
+make install
 ```
