@@ -39,6 +39,6 @@ In the repository, every library has its own folder, which contains the followin
 
         patches:
             @echo "-> Apply the patches"
-            @patch -s -p0 < ./patch-1.diff
+            @patch -s -p0 < ./patch.diff
         ```
 
