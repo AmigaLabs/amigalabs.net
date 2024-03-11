@@ -110,7 +110,7 @@ There are two marker symbols used. One for executable, object files and the othe
 
 **Executable, object files**
 
-The marker symbol `__amigaos4__` for executable is necessary because there is no distinct value defined for identifying the `ppc-amigaos` target in the [ELF Header](#ELF-Header). I even think this is ignored by the dynamic linker, this marker symbol is required by the linker, so that the linker can identify the target from the file. Thus `__amigaos4__` symbol must be protected against stripping.
+The marker symbol `__amigaos4__` for executable is necessary because there is no distinct value defined for identifying the `ppc-amigaos` target in the [ELF Header](#elf-header). I even think this is ignored by the dynamic linker, this marker symbol is required by the linker, so that the linker can identify the target from the file. Thus `__amigaos4__` symbol must be protected against stripping.
 
 **Sobjs**
 
@@ -139,7 +139,7 @@ Because strip by default removes all symbols from executables and object files, 
 
 #### PPC-AmigaOS Specific Relocations
 
-For the `ppc-amigaos` specific address model baserel, target specific relocation are needed, which are based upon the `.data` section, see [Base Relative Address Model](#Base-Relative-Address-Model) fro more information:
+For the `ppc-amigaos` specific address model baserel, target specific relocation are needed, which are based upon the `.data` section, see [Base Relative Address Model](#base-relative-address-model) fro more information:
 
 `BREL relocation = Symbol + Addend - .data`
 
