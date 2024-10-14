@@ -12,5 +12,8 @@ The AmigaLabs team is working to accomplish the following goals:
 - Developing and maintaining a new open-source libc named clib4
 - Updating the available adtools
 - Updating the binutils
+- Updating the cmake
 
 All the development we are doing is open source and can be found on [GitHub](https://github.com/amigalabs)
+
+You can contact us on [Amigans.net forum](https://amigans.net/) and on [Discord](https://discord.gg/3tVw7m57j9)
